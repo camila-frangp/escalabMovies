@@ -1,0 +1,83 @@
+/** @format */
+
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variables';
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  .modalContent {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    background: map-get($colors, movie-white);
+    .modalHeader {
+      @include box(movie-black, none, 0.5rem);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: 1rem 1rem 1.5rem;
+      &_title {
+        @include textType(20, movie-white, bold);
+      }
+      &_close {
+        @include textType(20, movie-white, bold);
+        margin: 0 0 0.75rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+    .detailMovie {
+      padding: 1rem;
+      &_cntimg {
+      }
+      .infoMovie {
+        &_points {
+          @include textType(14, movie-black);
+          .bold {
+            font-size: map-get($fontSize, 18);
+            font-weight: map-get($fonts, bold);
+            padding: 0 0 0 0.25rem;
+          }
+        }
+        &_description {
+          @include textType(12, movie-black);
+          padding: 0.75rem 0 1.5rem;
+        }
+        &_video {
+          .boxVideo {
+            border: none;
+          }
+        }
+        &_btn {
+          height: fit-content;
+          margin: 0 0 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .modal {
+    align-items: center;
+    .modalContent {
+      width: 900px;
+      height: auto;
+      border-radius: 0.5rem;
+      .modalHeader {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+    }
+  }
+}
