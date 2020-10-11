@@ -1,0 +1,52 @@
+/** @format */
+
+//Cantidad de grillas
+$grid-cols: 12;
+$i: 0;
+
+//Breakpoints
+$lg: 1199.98px;
+$md: 991.98px;
+$sm: 767.98px;
+$xs: 575.98px;
+$us: 415.98px;
+
+// Tipos de justify content
+$justifyContent: (
+  between: space-between,
+  around: space-around,
+  center: center,
+  end: flex-end,
+  start: flex-start,
+);
+//Menejo de offset right y left
+$margin-map: (
+  right: '_right',
+  left: '_left',
+);
+
+$fontSize: (
+  8: 0.5rem,
+  10: 0.625rem,
+  12: 0.75rem,
+  14: 0.875rem,
+  16: 1rem,
+  18: 1.125rem,
+  20: 1.25rem,
+  24: 1.5rem,
+);
+
+$fonts: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+);
+
+$colors: (
+  movie-black: #1c1c1c,
+  movie-light-grey: #c7c7c7,
+  movie-grey: #999999,
+  movie-white: #ffffff,
+  movie-pink: #ff2961,
+);
