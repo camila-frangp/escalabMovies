@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import cx from 'classnames';
@@ -16,8 +16,9 @@ import Button from '../../../component/Button/Button';
 
 const Header = () => {
   const [value, setValue] = useState('');
-  const dispatch = useDispatch();
   const [loader, setLoader] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const movieSearch = async event => {
     try {
@@ -37,20 +38,18 @@ const Header = () => {
 
   return (
     <header className={cx(css.header, 'container-row', 'row--between', 'row_align--center')}>
-      <NavLink to="/">
-        <figure className={cx(css.header_logo, 'col_2')}>
-          <img
-            src={logo}
-            alt="Logo texto Movies escalab"
-            className={cx(css.imgLogo, 'col_hidden_sm')}
-          />
-          <img
-            src={logoResponsive}
-            alt="Logo texto Movies escalab"
-            className={cx(css.imgLogo, 'col_hidden', 'col_show_sm')}
-          />
-        </figure>
-      </NavLink>
+      <figure className={cx(css.header_logo, 'col_2')} onClick={() => history.push('/')}>
+        <img
+          src={logo}
+          alt="Logo texto Movies escalab"
+          className={cx(css.imgLogo, 'col_hidden_sm')}
+        />
+        <img
+          src={logoResponsive}
+          alt="Logo texto Movies escalab"
+          className={cx(css.imgLogo, 'col_hidden', 'col_show_sm')}
+        />
+      </figure>
       <nav className={cx(css.nav, 'col_6', 'col_sm_8')}>
         <div className={cx('container-row', 'row_align--center', 'row_sm--end')}>
           <Input
