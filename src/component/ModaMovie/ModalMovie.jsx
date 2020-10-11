@@ -56,7 +56,8 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
                     className={cx(css.infoMovie_btn)}
                     onClick={() => {
                       setOptionFavorite(true);
-                      deleteFavorite(movie), onClose();
+                      deleteFavorite(movie);
+                      onClose();
                     }}>
                     - Eliminar de favoritos
                   </Button>
@@ -66,6 +67,7 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
                     onClick={() => {
                       setOptionFavorite(true);
                       addFavorite(movie);
+                      onClose();
                     }}>
                     + Agregar a favoritos
                   </Button>
