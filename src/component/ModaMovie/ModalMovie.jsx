@@ -25,7 +25,7 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
     if (trailerMovies.length === 0) {
       getTrailerMovies();
     }
-  }, []);
+  }, [trailerMovies]);
 
   return (
     <section className={cx(css.modal, 'container-row', 'row--center', 'row_align--center')}>
@@ -55,7 +55,8 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
                   <Button
                     className={cx(css.infoMovie_btn)}
                     onClick={() => {
-                      return setOptionFavorite(true), deleteFavorite(movie), onClose();
+                      setOptionFavorite(true);
+                      deleteFavorite(movie), onClose();
                     }}>
                     - Eliminar de favoritos
                   </Button>
@@ -63,7 +64,8 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
                   <Button
                     className={cx(css.infoMovie_btn)}
                     onClick={() => {
-                      return setOptionFavorite(true), addFavorite(movie);
+                      setOptionFavorite(true);
+                      addFavorite(movie);
                     }}>
                     + Agregar a favoritos
                   </Button>

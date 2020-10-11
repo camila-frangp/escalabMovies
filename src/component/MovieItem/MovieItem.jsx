@@ -15,7 +15,7 @@ const MovieItem = ({ movie, movieDetail, className }) => {
     <article className={cx(css.movieItem, 'container-row', 'row--center', className && className)}>
       {movie.poster_path ? (
         <figure>
-          <img src={urlImg(movie.poster_path)} alt={`image-movie-${movie.title}`} />
+          <img src={urlImg(movie.poster_path)} />
         </figure>
       ) : (
         <div>sin imagen disponible</div>
@@ -23,7 +23,8 @@ const MovieItem = ({ movie, movieDetail, className }) => {
       <section
         className={cx(css.generalMovie)}
         onClick={() => {
-          return setInfoMovie(true), movieDetail(movie);
+          setInfoMovie(true);
+          movieDetail(movie);
         }}>
         <h3 className={cx(css.generalMovie_title)}>{movie.title}</h3>
         <p className={cx(css.generalMovie_icon)}>i</p>
