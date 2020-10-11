@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
-function App() {
+import React, { Suspense, lazy } from 'react';
+import { Switch, Route } from 'react-router';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const FavoritesMoviesPage = lazy(() => import('./pages/FavoritesMoviesPage/FavoritesMoviesPage'));
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Suspense
+        fallback={<Loader type="Puff" color="#ff2961" height={100} width={100} timeout={3000} />}>
+        <Route path="/" component={HomePage} />
+        <Route path="/favorites_movies" component={FavoritesMoviesPage} />
+      </Suspense>
+    </Switch>
   );
-}
+};
 
 export default App;
