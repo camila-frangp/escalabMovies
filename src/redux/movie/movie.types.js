@@ -1,0 +1,9 @@
+/** @format */
+
+export const MovieActionTypes = {
+  REQUEST: 'REQUEST',
+  LIST_MOVIES: 'LIST_MOVIES',
+  ADD_FAVORITE: 'ADD_FAVORITE',
+  DELETE_FAVORITE: 'DELETE_FAVORITE',
+  MOVIE_INFO: 'MOVIE_INFO',
+};
