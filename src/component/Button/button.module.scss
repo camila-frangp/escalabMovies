@@ -1,0 +1,21 @@
+/** @format */
+
+@import './../../assets/scss/variables';
+@import './../../assets/scss/mixin';
+
+.button {
+  @include textType(14, movie-white, bold);
+  @include box(movie-pink, none, 0.25rem);
+  padding: 0.625rem 0.75rem;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background: lighten(map-get($colors, movie-pink), 10%);
+  }
+  &:active {
+    background: darken(map-get($colors, movie-pink), 10%);
+  }
+  &:disabled {
+    background: map-get($colors, movie-grey);
+  }
+}
