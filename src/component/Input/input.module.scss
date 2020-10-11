@@ -1,0 +1,28 @@
+/** @format */
+
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variables';
+
+.cntInput {
+  @include box(movie-white, movie-light-grey, 0.3125rem);
+  @include textType(14, movie-black);
+  width: 100%;
+  min-height: 38px;
+  padding: 0.625rem 0.75rem;
+  flex-grow: 1;
+  outline: none;
+  &::placeholder {
+    color: map-get($colors, movie-grey);
+  }
+  &:focus {
+    border: 1px solid map-get($colors, movie-pink);
+  }
+  &:hover {
+    border: 1px solid rgba(map-get($colors, movie-pink), 0.7);
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
