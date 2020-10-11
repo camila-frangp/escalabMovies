@@ -1,0 +1,63 @@
+/** @format */
+@import './../../../assets/scss/variables';
+@import './../../../assets/scss/mixin';
+
+.header {
+  @include box(movie-black, none);
+  height: 80px;
+  padding: 0.75rem 1.5rem;
+  &_logo {
+    height: 80px;
+    position: relative;
+    margin: 0 100px 0 0;
+    .imgLogo {
+      position: absolute;
+      width: 100%;
+      max-height: 56px;
+      top: 0;
+    }
+  }
+  .nav {
+    flex-grow: 1;
+    height: 56px;
+    &_btn {
+      margin: 0 0 0 0.5rem;
+    }
+    &_link {
+      @include textType(12, movie-white, medium);
+      outline: none;
+      margin-left: auto;
+      cursor: pointer;
+      &:hover {
+        color: lighten(map-get($colors, movie-pink), 10%);
+      }
+      &:active {
+        color: darken(map-get($colors, movie-pink), 10%);
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .header {
+    padding: 0.5rem 1rem;
+    &_logo {
+      height: 56px;
+      margin: 0 20px 0 0;
+      align-self: flex-start;
+      .imgLogo {
+        height: 100%;
+        max-height: auto;
+      }
+    }
+    .nav {
+      &_btn {
+        margin: 0 0 0 0.25rem;
+      }
+      &_link {
+        font-size: map-get($fontSize, 10);
+        margin: 0.5rem 0 0 auto;
+      }
+    }
+  }
+}
