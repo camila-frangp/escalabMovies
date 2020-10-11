@@ -1,0 +1,31 @@
+/** @format */
+
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variables';
+
+.movieItem {
+  @include box(movie-white, movie-pink, 0.25rem);
+  max-width: 250px;
+  box-shadow: 0 0 2px 2px rgba(map-get($colors, movie-pink), 0.7);
+  margin: 0 0.25rem 1rem;
+  padding: 0.75rem;
+
+  .generalMovie {
+    padding: 0.5rem 0.75rem;
+    &_title {
+      @include textType(18, movie-black, medium);
+    }
+    &_icon {
+      @include box(transparent, movie-black, 50%);
+      @include textType(18, movie-black, bold);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      cursor: pointer;
+      margin-left: auto;
+    }
+  }
+}
