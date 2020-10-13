@@ -27,6 +27,8 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
     }
   }, [trailerMovies]);
 
+  console.log('trailerMovies', trailerMovies);
+
   return (
     <section className={cx(css.modal, 'container-row', 'row--center', 'row_align--center')}>
       <article className={cx(css.modalContent)}>
@@ -43,37 +45,42 @@ const ModalMovie = ({ movie, addFavorite, deleteFavorite, onClose }) => {
               <span className={css.bold}>{movie.vote_average}</span>
             </p>
             <p className={cx(css.infoMovie_description)}>{movie.overview}</p>
-            {trailerMovies && trailerMovies.results && trailerMovies.results[0].key && (
-              <figure className={cx(css.infoMovie_video, 'container-row', 'row_align--end')}>
-                <iframe
-                  className={cx(css.boxVideo)}
-                  title={`https://www.youtube.com/embed/` + trailerMovies.results[0].key}
-                  src={`https://www.youtube.com/embed/` + trailerMovies.results[0].key}
-                  allowFullScreen
-                />
-                {optionFavorite ? (
-                  <Button
-                    className={cx(css.infoMovie_btn)}
-                    onClick={() => {
-                      setOptionFavorite(true);
-                      deleteFavorite(movie);
-                      onClose();
-                    }}>
-                    - Eliminar de favoritos
-                  </Button>
-                ) : (
-                  <Button
-                    className={cx(css.infoMovie_btn)}
-                    onClick={() => {
-                      setOptionFavorite(true);
-                      addFavorite(movie);
-                      onClose();
-                    }}>
-                    + Agregar a favoritos
-                  </Button>
+            <div className={cx('container-row', 'row_align--end')}>
+              {trailerMovies &&
+                trailerMovies.results &&
+                trailerMovies.results[0] &&
+                trailerMovies.results[0].key && (
+                  <figure className={cx(css.infoMovie_video)}>
+                    <iframe
+                      className={cx(css.boxVideo)}
+                      title={`https://www.youtube.com/embed/` + trailerMovies.results[0].key}
+                      src={`https://www.youtube.com/embed/` + trailerMovies.results[0].key}
+                      allowFullScreen
+                    />
+                  </figure>
                 )}
-              </figure>
-            )}
+              {optionFavorite ? (
+                <Button
+                  className={cx(css.infoMovie_btn)}
+                  onClick={() => {
+                    setOptionFavorite(true);
+                    deleteFavorite(movie);
+                    onClose();
+                  }}>
+                  - Eliminar de favoritos
+                </Button>
+              ) : (
+                <Button
+                  className={cx(css.infoMovie_btn)}
+                  onClick={() => {
+                    setOptionFavorite(true);
+                    addFavorite(movie);
+                    onClose();
+                  }}>
+                  + Agregar a favoritos
+                </Button>
+              )}
+            </div>
           </div>
         </section>
       </article>

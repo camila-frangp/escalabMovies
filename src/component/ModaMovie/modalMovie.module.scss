@@ -54,14 +54,14 @@
           padding: 0.75rem 0 1.5rem;
         }
         &_video {
-          .boxVideo {
-            border: none;
-          }
+          margin: 0 1rem 0 0;
         }
-        &_btn {
-          height: fit-content;
-          margin: 0 0 0 1rem;
+        .boxVideo {
+          border: none;
         }
+      }
+      &_btn {
+        height: fit-content;
       }
     }
   }
