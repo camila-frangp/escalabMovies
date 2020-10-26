@@ -15,7 +15,7 @@ const MovieItem = ({ movie, movieDetail, className }) => {
     <article className={cx(css.movieItem, 'container-row', 'row--center', className && className)}>
       {movie.poster_path ? (
         <figure>
-          <img src={urlImg(movie.poster_path)} />
+          <img src={urlImg(movie.poster_path)} alt={movie.title} />
         </figure>
       ) : (
         <div>sin imagen disponible</div>
