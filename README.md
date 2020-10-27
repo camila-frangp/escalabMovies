@@ -10,3 +10,5 @@ Error pendiente: al cambiar las rutas al page de favoritos el home queda, por lo
 ### TEST
 
 `npm install && npm start`
+
+https://find-movie-test-react-course.herokuapp.com/
